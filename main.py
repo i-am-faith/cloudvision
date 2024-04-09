@@ -53,13 +53,13 @@ if selected_page == "Home":
                 # Get today's date and weekday name
                 today_date = datetime.datetime.today().date()
                 today_weekday = datetime.datetime.today().strftime("%A")
-
+                st.subheader(f"{option} for the next {days} day(s) in {place}")
                 for day_num in range(days):
                     # Calculate the date for each forecast day
                     forecast_date = today_date + datetime.timedelta(days=day_num)
                     forecast_weekday = forecast_date.strftime("%A")
 
-                    st.subheader(f"{option} for the next {days} day(s) in {place}")
+                    
                     st.subheader(f"Day {day_num + 1} ({forecast_date}) - {forecast_weekday}")
                     day_data = filter_data[day_num * 6: (day_num + 1) * 6]
 
