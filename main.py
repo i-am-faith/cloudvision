@@ -33,7 +33,7 @@ if selected_page == "Home":
         options=(["Temperature", "Sky"]),
         key="dataselect",
     )
-    st.subheader(f"{option} for the next {days} day(s) in {place}")
+    
 
     try:
         if place:
@@ -59,6 +59,7 @@ if selected_page == "Home":
                     forecast_date = today_date + datetime.timedelta(days=day_num)
                     forecast_weekday = forecast_date.strftime("%A")
 
+                    st.subheader(f"{option} for the next {days} day(s) in {place}")
                     st.subheader(f"Day {day_num + 1} ({forecast_date}) - {forecast_weekday}")
                     day_data = filter_data[day_num * 6: (day_num + 1) * 6]
 
